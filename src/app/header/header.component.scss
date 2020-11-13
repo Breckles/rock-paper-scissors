@@ -1,0 +1,51 @@
+@use '../../theme';
+
+#headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 3px solid rgba(theme.$header-outline, 0.85);
+  border-radius: 0.5rem;
+}
+
+#logoWrapper {
+  padding: 2rem 0 2rem 2rem;
+
+  img {
+    display: block;
+    max-width: 55%;
+    max-height: 55%;
+  }
+}
+
+#scorecardWrapper {
+  padding: 1rem;
+
+  section#scorecard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 8rem;
+    height: 7rem;
+    padding: 1rem;
+
+    background-color: white;
+    border-radius: 0.5rem;
+
+    span#scorecardTitle {
+      color: theme.$scorecard-title-color;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+
+    span#scorecardScore {
+      color: rgba(theme.$scorecard-score-color, 0.9);
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+  }
+
+}
