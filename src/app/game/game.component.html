@@ -1,3 +1,4 @@
 <div id="gameWrapper">
-  <app-game-token [tokenInfo]='tokenInfo'></app-game-token>
+  <app-game-token *ngFor="let tokenInfo of tokenInfoList"
+                  [tokenInfo]='tokenInfo'></app-game-token>
 </div>

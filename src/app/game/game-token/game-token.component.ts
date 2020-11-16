@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { TokenInfo } from './token-info.interface';
 
 @Component({
@@ -9,15 +16,15 @@ import { TokenInfo } from './token-info.interface';
 export class GameTokenComponent implements OnInit, AfterViewInit {
   @Input()
   public tokenInfo!: TokenInfo;
+  @ViewChild('gameTokenWrapper')
+  public tokenWrapperRef!: ElementRef;
 
   constructor() {}
 
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    let el = document.querySelector('.gameTokenWrapper') as HTMLDivElement;
-    console.log(this.tokenInfo.borderColor);
-
-    el.style.background = this.tokenInfo.borderColor;
+    let tokenWrapper = this.tokenWrapperRef.nativeElement as HTMLDivElement;
+    tokenWrapper.style.background = this.tokenInfo.borderColor;
   }
 }
