@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RulesComponent } from './rules/rules.component';
 import { GameComponent } from './game/game.component';
+import { GameTokenComponent } from './game/game-token/game-token.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RulesComponent,
-    GameComponent
+    GameComponent,
+    GameTokenComponent
   ],
   imports: [
     BrowserModule,
