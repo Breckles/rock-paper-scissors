@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   public logo = {
     imagePath: '../../assets/images/logo.svg',
+    // imagePath: '../../assets/images/logo-bonus.svg',
     altText: 'A logo that says Rock Paper Scissors.',
   };
   public currentScore = 12;

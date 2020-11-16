@@ -1,0 +1,63 @@
+@use '../../theme';
+
+#rulesWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // border: 2px solid grey;
+}
+
+button#rulesButton {
+  padding: 1rem 4rem;
+
+  color: theme.$rules-button-text-color;
+  background-color: transparent;
+  border: 2px solid theme.$rules-button-outline-color;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+button#rulesButton:hover {
+  cursor: pointer;
+}
+
+section#rulesDisplay {
+  display: none;
+  // display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  padding: 10rem 0;
+
+  background-color: theme.$rules-display-background-color;
+
+  h1 {
+    color: theme.$dark-text;
+    font-size: 3.2rem;
+  }
+
+  button#closeIconWrapper {
+    cursor: pointer;
+    padding: 1rem;
+
+    border: none;
+    background-color: transparent;
+
+    img {
+      display: block;
+    }
+  }
+}
+
+section#rulesDisplay.open {
+  display: flex;
+}

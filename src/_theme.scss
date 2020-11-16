@@ -1,4 +1,12 @@
-$header-outline: hsl(217, 16%, 45%);
+//// General ///////////////////////////////////////////////////////////////////
 $app-background: linear-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+$dark-text: hsl(229, 25%, 31%);
+
+//// Header Component /////////////////////////////////////////////////////////
+$header-outline: rgba(hsl(217, 16%, 45%), 0.85);
 $scorecard-title-color: hsl(229, 64%, 46%);
-$scorecard-score-color: hsl(229, 25%, 31%);
+
+//// Rules Component /////////////////////////////////////////////////////////
+$rules-display-background-color: white;
+$rules-button-outline-color: rgba(white, 0.5);
+$rules-button-text-color: white;
