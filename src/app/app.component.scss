@@ -13,13 +13,18 @@ header {
   }
 }
 
+main {
+  app-game {
+    display: block;
+    height: 100%;
+  }
+}
+
 section#appRules {
   padding: 3rem 0;
 }
 
-//////////////////////////////////////////////////////////////////////////
-
-.attribution {
+footer {
   padding: 1rem;
 
   color: white;

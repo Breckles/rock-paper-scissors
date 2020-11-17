@@ -1,4 +1,8 @@
 <div id="gameWrapper">
-  <app-game-token *ngFor="let tokenInfo of tokenInfoList"
-                  [tokenInfo]='tokenInfo'></app-game-token>
+  <div id="selectionDial">
+    <img src="../../assets//images/bg-triangle.svg"
+         alt="">
+    <app-game-token *ngFor="let tokenInfo of tokenInfoList"
+                    [tokenInfo]='tokenInfo'></app-game-token>
+  </div>
 </div>

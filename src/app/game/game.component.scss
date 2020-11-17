@@ -1,5 +1,21 @@
-app-game-token {
-  display: block;
-  width: 35vw;
-  height: 35vw;
+#gameWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#selectionDial {
+  position: relative;
+  // height: 100%;
+
+
+
+  app-game-token {
+    display: block;
+    position: absolute;
+    width: 13rem;
+    height: 13rem;
+  }
 }

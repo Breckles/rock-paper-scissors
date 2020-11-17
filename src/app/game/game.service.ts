@@ -11,21 +11,21 @@ export class GameService {
       name: 'rock',
       iconPath: '../../assets/images/icon-rock.svg',
       borderColor:
-        'linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%))',
+        'linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%))',
       altText: 'The hand symbol for rock.',
     },
     {
       name: 'paper',
       iconPath: '../../assets/images/icon-paper.svg',
       borderColor:
-        'linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%))',
+        'linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%))',
       altText: 'The hand symbol for paper.',
     },
     {
       name: 'scissors',
       iconPath: '../../assets/images/icon-scissors.svg',
       borderColor:
-        'linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%))',
+        'linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%))',
       altText: 'The hand symbol for scissors.',
     },
   ];
@@ -34,35 +34,35 @@ export class GameService {
       name: 'rock',
       iconPath: '../../assets/images/icon-rock.svg',
       borderColor:
-        'linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%))',
+        'linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%))',
       altText: 'The hand symbol for rock.',
     },
     {
       name: 'paper',
       iconPath: '../../assets/images/icon-paper.svg',
       borderColor:
-        'linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%))',
+        'linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%))',
       altText: 'The hand symbol for paper.',
     },
     {
       name: 'scissors',
       iconPath: '../../assets/images/icon-scissors.svg',
       borderColor:
-        'linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%))',
+        'linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%))',
       altText: 'The hand symbol for scissors.',
     },
     {
       name: 'lizard',
       iconPath: '../../assets/images/icon-lizard.svg',
       borderColor:
-        'linear-gradient(to bottom, hsl(261, 73%, 60%), hsl(261, 72%, 63%))',
+        'linear-gradient(to top, hsl(261, 73%, 60%), hsl(261, 72%, 63%))',
       altText: 'The hand symbol for lizard.',
     },
     {
       name: 'spock',
       iconPath: '../../assets/images/icon-spock.svg',
       borderColor:
-        'linear-gradient(to bottom, hsl(189, 59%, 53%), hsl(189, 58%, 57%))',
+        'linear-gradient(to top, hsl(189, 59%, 53%), hsl(189, 58%, 57%))',
       altText: 'The hand symbol for spock.',
     },
   ];
