@@ -6,7 +6,9 @@
 }
 
 header {
+  position: relative;
   padding: 3rem;
+  z-index: 1;
 
   app-header {
     display: block;
@@ -14,6 +16,9 @@ header {
 }
 
 main {
+  position: relative;
+  z-index: 1;
+
   app-game {
     display: block;
     height: 100%;
@@ -21,11 +26,15 @@ main {
 }
 
 section#appRules {
+  // position: relative;
   padding: 3rem 0;
+  z-index: 5;
 }
 
 footer {
+  position: relative;
   padding: 1rem;
+  z-index: 1;
 
   color: white;
   font-size: 11px;

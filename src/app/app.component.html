@@ -3,7 +3,8 @@
     <app-header></app-header>
   </header>
   <main>
-    <app-game></app-game>
+    <app-game *ngIf="gameStart"
+              (playAgain)="resetGameComponent()"></app-game>
   </main>
   <section id="appRules">
     <app-rules></app-rules>

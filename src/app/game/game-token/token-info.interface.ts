@@ -1,5 +1,7 @@
+import { ValidMoves } from '../game.service';
+
 export interface TokenInfo {
-  name: string;
+  name: ValidMoves;
   iconPath: string;
   borderColor: string;
   altText: string;

@@ -1,8 +1,42 @@
 <div id="gameWrapper">
-  <div id="selectionDial">
+  <div id="selectionDial"
+       class="classicMode"
+       *ngIf="gameMode === 'classic'">
+    <img src="../../assets//images/bg-triangle.svg"
+         id="selectionDialBackground"
+         alt="">
+    <app-game-token *ngFor="let tokenInfo of tokenInfoList; index as i"
+                    class="{{ tokenInfo.name }}"
+                    [tokenInfo]='tokenInfo'
+                    (click)="onTokenSelected(i)"></app-game-token>
+  </div>
+  <div id="selectionDial"
+       class="alternateMode"
+       *ngIf="gameMode === 'alternate'">
     <img src="../../assets//images/bg-triangle.svg"
          alt="">
     <app-game-token *ngFor="let tokenInfo of tokenInfoList"
                     [tokenInfo]='tokenInfo'></app-game-token>
   </div>
+
+
+  <div id="choiceDisplay">
+    <div id="computerChoiceBackground">
+    </div>
+    <app-game-token id="computerToken"
+                    class="{{ computerTokenInfo.name }}"
+                    [tokenInfo]="computerTokenInfo"
+                    #computerToken></app-game-token>
+    <div id="choiceLabels">
+      <div id="youPicked">YOU PICKED</div>
+      <div id="housePicked">THE HOUSE PICKED</div>
+    </div>
+
+  </div>
+  <div id="resultsDisplay"
+       *ngIf="showResults">
+    <div id="resultMessage">{{ resultMessage }}</div>
+    <button (click)="onPlayAgain()">PLAY AGAIN</button>
+  </div>
+
 </div>
