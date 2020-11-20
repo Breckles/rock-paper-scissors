@@ -15,8 +15,9 @@ app-game-token {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 13rem;
-  height: 13rem;
+  width: 34%;
+  padding-top: min(13rem, 34%);
+  max-width: 13rem;
   z-index: 2;
 
   transition: all 500ms ease-in-out;
@@ -32,7 +33,7 @@ app-game-token.loser {
 }
 
 #selectionDial.classicMode {
-  img {
+  img#selectionDialBackground {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -42,15 +43,15 @@ app-game-token.loser {
   }
 
   app-game-token.rock {
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -100%);
   }
 
   app-game-token.paper {
-    transform: translate(-120%, -120%);
+    transform: translate(-120%, -220%);
   }
 
   app-game-token.scissors {
-    transform: translate(20%, -120%);
+    transform: translate(20%, -220%);
   }
 
   app-game-token.hidden {
@@ -60,12 +61,12 @@ app-game-token.loser {
 
   app-game-token.selected {
     pointer-events: none;
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -170%);
     z-index: 5;
   }
 
   app-game-token.selected.choiceDisplay {
-    transform: translate(-120%, -120%);
+    transform: translate(-120%, -220%);
   }
 }
 
@@ -93,7 +94,7 @@ app-game-token.loser {
   app-game-token#computerToken {
     pointer-events: none;
     opacity: 0;
-    transform: translate(20%, -120%);
+    transform: translate(20%, -220%);
     z-index: 1;
   }
 
@@ -156,5 +157,21 @@ app-game-token.loser {
     font-family: theme.$font-stack;
     font-size: 1.6rem;
     letter-spacing: 2px;
+  }
+}
+
+
+//// Wider screen styles //////////////////////////////////////////////
+
+@media screen and (min-width: 1000px) {
+  app-game-token {
+    max-width: 20rem;
+    padding-top: min(20rem, 34%);
+  }
+
+  #selectionDial.classicMode {
+    img#selectionDialBackground {
+      width: 32rem;
+    }
   }
 }
