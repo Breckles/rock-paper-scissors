@@ -3,32 +3,46 @@
 #headerWrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
+  width: 100%;
+  height: 100%;
 
   border: 3px solid theme.$header-outline;
   border-radius: 0.5rem;
 }
 
 #logoWrapper {
-  padding: 2rem 0 2rem 2rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding-left: 6%;
 
   img {
+    flex: 0 1 60%;
     display: block;
-    max-width: 55%;
-    max-height: 9rem;
+    min-width: 8rem;
+    max-height: 90%;
   }
 }
 
 #scorecardWrapper {
-  padding: 1rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 3%;
 
   section#scorecard {
     display: flex;
+    flex: 0 1 60%;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    width: 8rem;
-    height: 7rem;
+    justify-content: center;
+    max-width: 20rem;
+    height: 100%;
     padding: 1rem;
 
     background-color: white;
@@ -48,4 +62,26 @@
     }
   }
 
+}
+
+@media screen and (min-width: 1000px) {
+  #headerWrapper {
+    border-radius: 1.5rem;
+  }
+
+  #scorecardWrapper {
+    section#scorecard {
+      border-radius: 1rem;
+
+      span#scorecardTitle {
+        font-size: 1.7rem;
+      }
+
+      span#scorecardScore {
+        font-size: 6.5rem;
+        font-weight: 700;
+      }
+    }
+
+  }
 }

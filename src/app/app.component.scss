@@ -1,8 +1,8 @@
 #appWrapper {
-  width: 100%;
-  height: 100%;
   display: grid;
   grid-template-rows: 0fr 1fr 0fr 0fr;
+  width: 100%;
+  height: 100%;
 }
 
 header {
@@ -43,5 +43,28 @@ footer {
   a {
     color: hsl(228, 45%, 44%);
   }
+}
 
+
+//// wide screen layout ////////////////////////////////////////////////////
+
+@media screen and (min-width: 1000px) {
+  #appWrapper {
+    grid-template-rows: 0fr 1fr 0fr;
+    justify-content: center;
+  }
+
+  header {
+    width: 57vw;
+
+    app-header {
+      height: 16rem;
+    }
+  }
+
+  section#appRules {
+    position: absolute;
+    right: 3rem;
+    bottom: 3rem;
+  }
 }
