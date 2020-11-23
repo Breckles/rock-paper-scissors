@@ -7,21 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RulesComponent implements OnInit {
   public rulesImagePath = '../../assets/images/image-rules.svg';
+  private rulesWrapperEl!: HTMLElement;
   private rulesDisplayEl!: HTMLElement;
 
   constructor() {}
 
   ngOnInit(): void {
+    this.rulesWrapperEl = document.querySelector(
+      '#rulesWrapper'
+    ) as HTMLElement;
     this.rulesDisplayEl = document.querySelector(
       '#rulesDisplay'
     ) as HTMLElement;
+
+    window.addEventListener('click', (event: MouseEvent) => {
+      if (!this.rulesDisplayEl.contains(<Node>event.target)) {
+        this.hideRules(event);
+      }
+    });
   }
 
-  openDisplay() {
-    this.rulesDisplayEl.classList.add('open');
+  showRules(event: MouseEvent) {
+    event.stopPropagation();
+    this.rulesWrapperEl.classList.add('showRules');
   }
 
-  closeDisplay() {
-    this.rulesDisplayEl.classList.remove('open');
+  hideRules(event: MouseEvent) {
+    event.stopPropagation();
+    this.rulesWrapperEl.classList.remove('showRules');
   }
 }

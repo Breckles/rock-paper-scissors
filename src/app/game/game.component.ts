@@ -34,13 +34,14 @@ export class GameComponent implements OnInit, AfterViewInit {
   private computerToken!: GameTokenComponent;
   public computerTokenInfo!: TokenInfo;
   private computerTokenEl!: HTMLElement;
+  private computerChoiceBackgroundEl!: HTMLElement;
 
   public gameMode!: string;
   public tokenInfoList!: TokenInfo[];
 
   public showChoices = false;
-  public showResults = false;
 
+  private resultsDisplayEl!: HTMLElement;
   public resultMessage = '';
 
   constructor(private gS: GameService) {}
@@ -62,6 +63,14 @@ export class GameComponent implements OnInit, AfterViewInit {
 
     this.computerTokenEl = document.querySelector(
       '#computerToken'
+    ) as HTMLElement;
+
+    this.computerChoiceBackgroundEl = document.querySelector(
+      '#computerChoiceBackground'
+    ) as HTMLDivElement;
+
+    this.resultsDisplayEl = document.querySelector(
+      '#resultsDisplay'
     ) as HTMLElement;
   }
 
@@ -87,10 +96,7 @@ export class GameComponent implements OnInit, AfterViewInit {
   private displayChoices() {
     this.showChoices = true;
 
-    let computerChoiceBackground = document.querySelector(
-      '#computerChoiceBackground'
-    ) as HTMLDivElement;
-    computerChoiceBackground.classList.add('visible');
+    this.computerChoiceBackgroundEl.classList.add('visible');
 
     let choiceLabels = document.querySelector(
       '#choiceLabels'
@@ -108,7 +114,6 @@ export class GameComponent implements OnInit, AfterViewInit {
   private computerSelectToken() {
     let randomIndex = Math.floor(Math.random() * this.tokenInfoList.length);
     let computerChoice = this.tokenInfoList[randomIndex];
-    console.log(computerChoice);
 
     let computerToken = document.querySelector('#computerToken') as HTMLElement;
     computerToken.classList.add('visible');
@@ -131,8 +136,6 @@ export class GameComponent implements OnInit, AfterViewInit {
       this.playerTokenInfo.name,
       this.computerTokenInfo.name
     );
-    console.log(this.playerToken);
-    console.log(this.computerToken);
 
     if (result === -1) {
       // player loses
@@ -143,6 +146,8 @@ export class GameComponent implements OnInit, AfterViewInit {
     } else if (result === 0) {
       // draw
       this.resultMessage = 'DRAW';
+      this.playerTokenEl.classList.add('loser');
+      this.computerTokenEl.classList.add('loser');
     } else {
       // player wins
       this.resultMessage = 'YOU WIN';
@@ -150,7 +155,16 @@ export class GameComponent implements OnInit, AfterViewInit {
       this.computerTokenEl.classList.add('loser');
       this.playerToken.triggerWinAnimation();
     }
-    this.showResults = true;
+
+    let youPickedLabel = document.querySelector('#youPicked') as HTMLElement;
+    youPickedLabel.classList.add('resultDisplay');
+    let housePickedLabel = document.querySelector(
+      '#housePicked'
+    ) as HTMLElement;
+    housePickedLabel.classList.add('resultDisplay');
+
+    this.computerChoiceBackgroundEl.classList.remove('visible');
+    this.resultsDisplayEl.classList.add('showResults');
   }
 
   public onPlayAgain() {

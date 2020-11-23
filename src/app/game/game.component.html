@@ -1,4 +1,5 @@
 <div id="gameWrapper">
+
   <div id="selectionDial"
        class="classicMode"
        *ngIf="gameMode === 'classic'">
@@ -19,22 +20,21 @@
                     [tokenInfo]='tokenInfo'></app-game-token>
   </div>
 
-
   <div id="choiceDisplay">
     <div id="computerChoiceBackground">
+    </div>
+    <div id="choiceLabels">
+      <div id="youPicked">YOU PICKED</div>
+      <div id="housePicked">THE HOUSE PICKED</div>
     </div>
     <app-game-token id="computerToken"
                     class="{{ computerTokenInfo.name }}"
                     [tokenInfo]="computerTokenInfo"
                     #computerToken></app-game-token>
-    <div id="choiceLabels">
-      <div id="youPicked">YOU PICKED</div>
-      <div id="housePicked">THE HOUSE PICKED</div>
-    </div>
-
   </div>
-  <div id="resultsDisplay"
-       *ngIf="showResults">
+
+
+  <div id="resultsDisplay">
     <div id="resultMessage">{{ resultMessage }}</div>
     <button (click)="onPlayAgain()">PLAY AGAIN</button>
   </div>

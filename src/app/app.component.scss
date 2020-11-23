@@ -9,8 +9,6 @@
 
 header {
   position: relative;
-  display: flex;
-  justify-content: center;
   width: 100%;
   padding: 3rem;
   z-index: 1;
@@ -32,9 +30,12 @@ main {
 }
 
 section#appRules {
-  // position: relative;
   padding: 3rem 0;
   z-index: 5;
+
+  app-rules {
+    display: block;
+  }
 }
 
 footer {
@@ -60,6 +61,8 @@ footer {
   }
 
   header {
+    display: flex;
+    justify-content: center;
 
     app-header {
       width: 57%;

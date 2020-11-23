@@ -4,11 +4,11 @@
     <img src={{rulesImagePath}}
          alt="An image detailing the rules of the game.">
     <button id="closeIconWrapper"
-            (click)="closeDisplay()">
+            (click)="hideRules($event)">
       <img src="../../assets/images/icon-close.svg"
            alt="close rules">
     </button>
   </section>
   <button id="rulesButton"
-          (click)="openDisplay()">RULES</button>
+          (click)="showRules($event)">RULES</button>
 </div>

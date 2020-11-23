@@ -28,8 +28,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   resetGameComponent() {
-    console.log('resetting game');
-
     this.gameStart = false;
     window.setTimeout(() => {
       this.gameStart = true;
