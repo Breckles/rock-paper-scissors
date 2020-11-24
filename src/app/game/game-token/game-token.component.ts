@@ -36,6 +36,10 @@ export class GameTokenComponent
     tokenWrapper.style.background = this.tokenInfo.borderColor;
   }
 
+  public disableTokenInteraction() {
+    this.tokenWrapperEl.style.pointerEvents = 'none';
+  }
+
   public triggerWinAnimation() {
     this.tokenWrapperEl.classList.add('winner');
   }

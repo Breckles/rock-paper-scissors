@@ -10,6 +10,10 @@
 }
 
 app-game-token {
+  // disable pointer event, the game token component overrides this internally
+  // and allows the event to bubble up. If this is not done, we end up with
+  // clickable whitespace, which is no bueno.
+  pointer-events: none;
   cursor: pointer;
   display: block;
   position: absolute;
@@ -23,6 +27,12 @@ app-game-token {
   transition: all 500ms ease-in-out;
 }
 
+app-game-token:focus,
+app-game-token:active {
+  outline: none;
+}
+
+
 app-game-token.winner {
   z-index: 5;
 }
@@ -31,7 +41,10 @@ app-game-token.loser {
   z-index: 10;
 }
 
+//// Rock Paper Scissors /////////////////////////////////////////////
+
 #selectionDial.classicMode {
+
   img#selectionDialBackground {
     position: absolute;
     left: 50%;
@@ -69,6 +82,63 @@ app-game-token.loser {
   }
 }
 
+//// Rock Paper Scissors Lizard Spock ///////////////////////////////////////
+
+#selectionDial.alternateMode {
+  app-game-token {
+    pointer-events: none;
+    max-width: 10rem;
+    padding-top: min(10rem, 35%);
+  }
+
+  img#selectionDialBackground {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 20rem;
+  }
+
+  app-game-token.rock {
+    transform: translate(15%, -50%);
+  }
+
+  app-game-token.paper {
+    transform: translate(60%, -175%);
+  }
+
+  app-game-token.scissors {
+    transform: translate(-50%, -260%);
+  }
+
+  app-game-token.lizard {
+    transform: translate(-115%, -50%);
+  }
+
+  app-game-token.spock {
+    transform: translate(-160%, -175%);
+  }
+
+  app-game-token.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  app-game-token.selected {
+    pointer-events: none;
+    transform: translate(-50%, -170%);
+    z-index: 5;
+    width: 35%;
+    padding-top: min(13rem, 35%);
+    max-width: 13rem;
+  }
+
+  app-game-token.selected.choiceDisplay {
+    transform: translate(-120%, -220%);
+  }
+}
+
 #choiceDisplay {
   width: 100%;
 
@@ -91,6 +161,7 @@ app-game-token.loser {
   }
 
   app-game-token#computerToken {
+    cursor: default;
     pointer-events: none;
     opacity: 0;
     transform: translate(20%, -220%);
@@ -179,6 +250,8 @@ app-game-token.loser {
     padding-top: min(20rem, 34%);
   }
 
+  //// Rock Paper Scissors ///////////////////////////////////////////////
+
   #selectionDial.classicMode {
     img#selectionDialBackground {
       width: 32rem;
@@ -194,6 +267,30 @@ app-game-token.loser {
     }
   }
 
+  //// Rock Paper Scissors Lizard Spock ///////////////////////////////////////////
+
+  #selectionDial.alternateMode {
+    img#selectionDialBackground {
+      width: 32rem;
+    }
+
+    app-game-token {
+      max-width: 15rem;
+      padding-top: min(15rem, 34%);
+    }
+
+    app-game-token.selected.choiceDisplay {
+      transform: translate(-241%, -264%) scale(2.3, 2.3);
+    }
+
+    app-game-token.selected.choiceDisplay.winner,
+    app-game-token.selected.choiceDisplay.loser {
+      transform: translate(-311%, -264%) scale(2.3, 2.3);
+    }
+  }
+
+  /////////////////////////////////////////////////////////////////////////////////
+
   #choiceDisplay {
     #computerChoiceBackground {
       transform: translate(136%, -28%) scale(2, 2);
@@ -207,6 +304,7 @@ app-game-token.loser {
     app-game-token#computerToken.loser {
       transform: translate(122%, -190%) scale(1.5, 1.5);
     }
+
 
     #choiceLabels {
       div {

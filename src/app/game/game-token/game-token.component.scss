@@ -1,4 +1,6 @@
 .gameTokenWrapper {
+  // override parent's pointer-events:none value. Event will bubble up to parent
+  pointer-events: auto;
   position: absolute;
   display: flex;
   align-items: center;
@@ -11,6 +13,7 @@
 }
 
 .innerCircle {
+  // pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -6,7 +6,7 @@ import { TokenInfo } from './game-token/token-info.interface';
   providedIn: 'root',
 })
 export class GameService {
-  private gameMode: 'classic' | 'alternate' = 'classic';
+  private gameMode: GameModes = GameModes.classic;
   private classicTokenInfo: TokenInfo[] = [
     {
       name: ValidMoves.rock,
@@ -76,6 +76,7 @@ export class GameService {
   private currentScore = +this.sessionStorage.getItem('score')!;
 
   public scoreChanged = new Subject<number>();
+  public gameModeChanged = new Subject<GameModes>();
 
   // resultMatrix[userPick][computerPick] will return result from player
   // perspective.
@@ -101,6 +102,18 @@ export class GameService {
     return this.gameMode;
   }
 
+  public changeGameMode() {
+    if (this.gameMode === GameModes.classic) {
+      this.gameMode = GameModes.alternate;
+    } else {
+      this.gameMode = GameModes.classic;
+    }
+
+    this.currentScore = 0;
+    this.scoreChanged.next(this.currentScore);
+    this.gameModeChanged.next(this.gameMode);
+  }
+
   /**
    * Determines the winner given player and computer inputs
    * @param {string} playerChoice
@@ -118,12 +131,17 @@ export class GameService {
     return result;
   }
 
-  public setScore() {
-    let sessionScore = +sessionStorage.getItem('score')!;
+  public setScore(newScore?: number) {
+    if (newScore) {
+      this.currentScore = newScore;
+    } else {
+      let sessionScore = +sessionStorage.getItem('score')!;
 
-    if (sessionScore) {
-      this.currentScore = sessionScore;
+      if (sessionScore) {
+        this.currentScore = sessionScore;
+      }
     }
+
     this.scoreChanged.next(this.currentScore);
   }
 
@@ -138,4 +156,9 @@ export enum ValidMoves {
   scissors = 'scissors',
   lizard = 'lizard',
   spock = 'spock',
+}
+
+export enum GameModes {
+  classic = 'classic',
+  alternate = 'alternate',
 }

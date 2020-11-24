@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { GameModes, GameService } from '../game/game.service';
 
 @Component({
   selector: 'app-rules',
@@ -6,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rules.component.scss'],
 })
 export class RulesComponent implements OnInit {
-  public rulesImagePath = '../../assets/images/image-rules.svg';
+  private rulesImagePaths = new Map();
+  public rulesImagePath!: string;
+
+  private gameModeChangedSubscription = new Subscription();
+
   private rulesWrapperEl!: HTMLElement;
   private rulesDisplayEl!: HTMLElement;
 
-  constructor() {}
+  constructor(private gS: GameService) {}
 
   ngOnInit(): void {
     this.rulesWrapperEl = document.querySelector(
@@ -25,6 +31,23 @@ export class RulesComponent implements OnInit {
         this.hideRules(event);
       }
     });
+
+    this.rulesImagePaths.set(
+      GameModes.classic,
+      '../../assets/images/image-rules.svg'
+    );
+    this.rulesImagePaths.set(
+      GameModes.alternate,
+      '../../assets/images/image-rules-bonus.svg'
+    );
+
+    this.rulesImagePath = this.rulesImagePaths.get(GameModes.classic);
+
+    this.gameModeChangedSubscription = this.gS.gameModeChanged.subscribe(
+      (gameMode: GameModes) => {
+        this.rulesImagePath = this.rulesImagePaths.get(gameMode);
+      }
+    );
   }
 
   showRules(event: MouseEvent) {

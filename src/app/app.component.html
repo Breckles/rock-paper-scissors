@@ -1,6 +1,16 @@
 <div id="appWrapper">
   <header>
     <app-header></app-header>
+    <div id="gameModeToggle">
+      <label for="gameModeToggle">Toggle Game Mode</label>
+      <button id="gameModeToggleButton"
+              type="button"
+              (click)="toggleGameMode()">
+        <div id="gameModeToggleDot"
+             class="classicMode"
+             #gameModeToggleDot></div>
+      </button>
+    </div>
   </header>
   <main>
     <app-game *ngIf="gameStart"

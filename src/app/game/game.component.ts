@@ -84,6 +84,7 @@ export class GameComponent implements OnInit, AfterViewInit {
       } else {
         this.tokenElsArray[i].classList.add('hidden');
       }
+      this.gameTokensArray[i].disableTokenInteraction();
     }
     (<HTMLImageElement>(
       document.querySelector('#selectionDialBackground')

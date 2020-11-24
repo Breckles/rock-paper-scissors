@@ -16,13 +16,25 @@
   align-items: center;
   justify-content: flex-start;
   height: 100%;
-  padding-left: 6%;
+  padding-left: 3%;
+  // padding: 3% 3% 3% 6%;
 
   img {
-    flex: 0 1 60%;
-    display: block;
+    max-height: 11rem;
+  }
+
+  img.classic {
+    width: 60%;
     min-width: 8rem;
-    max-height: 90%;
+    max-width: 14rem;
+  }
+
+  // Logo image for alternate game mode
+  img.alternate {
+    width: 40%;
+    min-width: 7rem;
+    max-width: 11rem;
+    padding-left: 6%;
   }
 }
 
@@ -32,17 +44,19 @@
   align-items: center;
   justify-content: flex-end;
   height: 100%;
-  padding: 3%;
+  padding: 1rem 3% 1rem 0;
 
   section#scorecard {
     display: flex;
-    flex: 0 1 60%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 20rem;
-    height: 100%;
+    height: 80%;
     padding: 1rem;
+
+    width: 60%;
+    min-width: 8rem;
+    max-width: 14rem;
 
     background-color: white;
     border-radius: 0.5rem;
@@ -66,6 +80,22 @@
 @media screen and (min-width: 1000px) {
   #headerWrapper {
     border-radius: 1.5rem;
+  }
+
+  #logoWrapper {
+    img {
+      max-height: 13rem;
+    }
+
+    img.classic {
+      max-width: 17rem;
+    }
+
+    // Logo image for alternate game mode
+    img.alternate {
+      max-width: 12rem;
+      padding-left: 0;
+    }
   }
 
   #scorecardWrapper {

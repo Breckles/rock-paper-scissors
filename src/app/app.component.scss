@@ -1,6 +1,5 @@
 #appWrapper {
   display: grid;
-  justify-content: center;
   grid-template-rows: 0fr 1fr 0fr 0fr;
   grid-template-columns: 100%;
   width: 100%;
@@ -9,15 +8,61 @@
 
 header {
   position: relative;
-  width: 100%;
-  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 3rem 3rem 1rem;
   z-index: 1;
-  text-align: center;
 
   app-header {
     display: block;
+    width: 100%;
+  }
+
+  #gameModeToggle {
+    left: 3rem;
+    display: flex;
+    align-items: center;
+    padding-top: 0.5rem;
+
+    label {
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    #gameModeToggleButton {
+      position: relative;
+      width: 3.5rem;
+      height: 1.5rem;
+      margin-left: 0.3rem;
+
+      border: none;
+      border-radius: 1rem;
+      background-color: rgba($color: black, $alpha: 0.25);
+    }
+
+    #gameModeToggleDot {
+      position: absolute;
+      top: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+
+      border-radius: 50%;
+      background-color: white;
+      transition: all 100ms ease-in-out;
+    }
+
+    #gameModeToggleDot.classicMode {
+      left: 0.1rem;
+    }
+
+    #gameModeToggleDot.alternateMode {
+      left: 1.9rem;
+    }
   }
 }
+
 
 main {
   position: relative;
@@ -61,11 +106,10 @@ footer {
   }
 
   header {
-    display: flex;
-    justify-content: center;
+    width: 60%;
+    justify-self: center;
 
     app-header {
-      width: 57%;
       height: 16rem;
     }
   }
