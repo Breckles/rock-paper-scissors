@@ -279,13 +279,18 @@ app-game-token.loser {
       padding-top: min(15rem, 34%);
     }
 
+    app-game-token.selected {
+      max-width: 20rem;
+      padding-top: min(20rem, 34%);
+    }
+
     app-game-token.selected.choiceDisplay {
-      transform: translate(-241%, -264%) scale(2.3, 2.3);
+      transform: translate(-150%, -190%) scale(1.5, 1.5);
     }
 
     app-game-token.selected.choiceDisplay.winner,
     app-game-token.selected.choiceDisplay.loser {
-      transform: translate(-311%, -264%) scale(2.3, 2.3);
+      transform: translate(-220%, -190%) scale(1.5, 1.5);
     }
   }
 
