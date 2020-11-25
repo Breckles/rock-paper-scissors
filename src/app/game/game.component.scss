@@ -10,7 +10,10 @@
 }
 
 app-game-token {
-  // disable pointer event, the game token component overrides this internally
+  // In mobile Chrome, remove the blue box around an element when it is tapped
+  -webkit-tap-highlight-color: transparent;
+
+  // disable pointer events, the game token component overrides this internally
   // and allows the event to bubble up. If this is not done, we end up with
   // clickable whitespace, which is no bueno.
   pointer-events: none;
@@ -29,9 +32,8 @@ app-game-token {
 
 app-game-token:focus,
 app-game-token:active {
-  outline: none;
+  outline: none !important;
 }
-
 
 app-game-token.winner {
   z-index: 5;
