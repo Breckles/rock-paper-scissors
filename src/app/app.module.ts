@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { RulesComponent } from './rules/rules.component';
 import { GameComponent } from './game/game.component';
 import { GameTokenComponent } from './game/game-token/game-token.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { GameTokenComponent } from './game/game-token/game-token.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
