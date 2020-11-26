@@ -44,3 +44,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Certificate/Key pair to enable https on http-server
+key.pem
+cert.pem
