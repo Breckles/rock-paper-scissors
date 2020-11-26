@@ -1,13 +1,12 @@
 {
-  "name": "rock-paper-scissors",
-  "short_name": "rock-paper-scissors",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Rock Paper Scissors (Lizard Spock?)",
+  "short_name": "RPS(LS?)",
+  "theme_color": "#64ecbb",
+  "background_color": "#1f3756",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
-  "icons": [
-    {
+  "icons": [{
       "src": "assets/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png",
