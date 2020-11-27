@@ -11,7 +11,8 @@
           "/manifest.webmanifest",
           "/*.css",
           "/*.js",
-          "/assets/**"
+          "/assets/**",
+          "/*.png"
         ]
       }
     },
@@ -21,7 +22,7 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+          "/*.(eot|svg|cur|jpg|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
     }
